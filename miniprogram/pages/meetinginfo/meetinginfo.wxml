@@ -1,0 +1,58 @@
+<!--pages/meetinginfo/meetinginfo.wxml-->
+<view class="page__bd">
+		<view class="weui-form-preview">
+			<view class="weui-form-preview__hd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">会议名称</label>
+					<em class="weui-form-preview__value">{{meeting['name']}}</em>
+				</view>
+			</view>
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">会议内容</label>
+					<text class="weui-form-preview__value">{{meeting['content']}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">经办人</label>
+					<text class="weui-form-preview__value">{{meeting['lunch']}}</text>
+				</view>
+        <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">申请部门</label>
+					<text class="weui-form-preview__value">{{meeting['department']}}</text>
+				</view>
+        <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">联系电话</label>
+					<text class="weui-form-preview__value">{{meeting['phone']}}</text>
+				</view>
+        <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">地点</label>
+					<text class="weui-form-preview__value">{{meeting['roomId']}}</text>
+				</view>
+        <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">日期</label>
+					<text class="weui-form-preview__value">{{meeting['date']}}</text>
+				</view>
+        <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">时间</label>
+					<text class="weui-form-preview__value">{{meeting['startTime']}} - {{meeting['endTime']}}</text>
+				</view>
+        <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">参会人员</label>
+					<text class="weui-form-preview__value">{{meeting['joinPerson']}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">会议类型</label>
+					<text class="weui-form-preview__value">{{meeting.type == 1 ? "本地会议":"视频会议"}}</text>
+				</view>
+				<view class="weui-form-preview__item" hidden="{{meeting.type == 1}}">
+					<label class="weui-form-preview__label">会议模式</label>
+					<text class="weui-form-preview__value">{{meeting.mode}}</text>
+				</view>
+			</view>
+			<view class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="Subscribe">订阅</a>
+			</view>
+
+			<!-- <button type="primary" bindtap="test">ceshi</button> -->
+		</view>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/me/me.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="weui-form">
+		<view class="weui-form__text-area">
+			<h2 class="weui-form__title">我的会议</h2>
+		</view>
+		<view class="weui-form__control-area">
+			<view class="weui-cells__group weui-cells__group_form">
+				<view class="weui-cells">
+					
+					<navigator url="../mymeeting/mymeeting?method=mySubscribe" class="weui-cell weui-cell_access navigator">
+						<view class="weui-cell__bd"><view>我订阅的会议</view></view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+					<navigator url="../mymeeting/mymeeting?method=mySubmit" class="weui-cell weui-cell_access navigator">
+						<view class="weui-cell__bd"><view>我发起的会议</view></view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+
+					<navigator hidden="{{isHibben}}" url="../meetingList/meetingList?method=checked" class="weui-cell weui-cell_access navigator">
+						<view class="weui-cell__bd"><view>已审核的会议</view></view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+					<navigator hidden="{{isHibben}}" url="../meetingList/meetingList?method=NonCheck" class="weui-cell weui-cell_access navigator">
+						<view class="weui-cell__bd"><view>未审核的会议</view></view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+
+					<navigator url="../userInfo/info" class="weui-cell weui-cell_access navigator">
+						<view class="weui-cell__bd"><view>个人信息</view></view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

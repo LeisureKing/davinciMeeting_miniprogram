@@ -1,0 +1,14 @@
+module.exports={
+	//开发环境的url
+	dev:{
+		baseUrl:"http://localhost:8080"
+	},
+	//测试环境url
+	test:{
+		baseUrl:"https://dowalker.cn"
+	},
+	//线上环境url
+	prod:{
+		baseUrl:"dowalker.cn"
+	}
+}

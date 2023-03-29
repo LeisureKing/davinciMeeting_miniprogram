@@ -1,0 +1,14 @@
+<!--pages/meetingList/meetingList.wxml-->
+<view class="weui-cells">
+  <navigator wx:for="{{meeting}}" wx:for-index="meetingIndex" wx:for-item="meetingItem" wx:key="id"
+    url="../checkMeeting/checkMeeting?mid={{meetingItem.id}}&status={{status}}"
+    class="weui-cell weui-cell_access navigator">
+    <view class="weui-cell__bd">
+      <view>
+        {{meetingItem.date}}
+      </view>
+    </view>
+    <view class="weui-cell__bd">{{meetingItem.name}}</view>
+    <view class="weui-cell__ft"></view>
+  </navigator>
+</view>

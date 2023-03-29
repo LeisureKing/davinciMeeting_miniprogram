@@ -1,0 +1,6 @@
+/* pages/mymeeting/mymeeting.wxss */
+.weui-form-preview {
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

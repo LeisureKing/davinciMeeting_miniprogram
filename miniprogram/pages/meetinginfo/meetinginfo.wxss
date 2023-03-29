@@ -1,0 +1,7 @@
+/* pages/meetinginfo/meetinginfo.wxss */
+.weui-form-preview {
+  margin-bottom: 25px;
+  margin-left: 18px;
+  margin-right: 18px;
+  margin-top: 20px;
+}

@@ -1,0 +1,72 @@
+<wxs module="dateUtil" src="../utils/dateUtils.wxs"></wxs>
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="page__bd">
+		<view class="weui-form-preview" wx:for="{{meeting}}" wx:key="id">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">会议名称</label>
+          <em class="weui-form-preview__value">{{item.name}}</em>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">会议内容</label>
+          <text class="weui-form-preview__value">{{item.content}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">经办人</label>
+          <text class="weui-form-preview__value">{{item.lunch}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">申请部门</label>
+          <text class="weui-form-preview__value">{{item.department}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">联系电话</label>
+          <text class="weui-form-preview__value">{{item.phone}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">地点</label>
+          <text class="weui-form-preview__value">{{item.roomId}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">日期</label>
+          <text class="weui-form-preview__value">{{dateUtil.formatTime(item.date)}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">时间</label>
+          <text class="weui-form-preview__value">{{dateUtil.formatMinute(item.startTime,'hh:mm')}}-{{dateUtil.formatMinute(item.endTime,'hh:mm')}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">会议类型</label>
+          <text class="weui-form-preview__value">{{item.type==1?'本地会议':'视频会议'}}</text>
+        </view>
+        <view class="weui-form-preview__item" hidden="{{item.type==1}}">
+          <label class="weui-form-preview__label">会议模式</label>
+          <text class="weui-form-preview__value">{{item.mode}}</text>
+        </view>
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">参会人员</label>
+          <text class="weui-form-preview__value">{{item.joinPerson}}</text>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="cancel" data-id="{{item.id}}">取消</a>
+      </view>
+
+      <view class="fadeIn" wx:if="{{dialog}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">提示</strong></view>
+            <view class="weui-dialog__bd">{{msg}}</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="close">取消</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="sure">确定</a>
+            </view>
+        </view>
+    </view>
+    </view>
+
+    
+	</view>
+</view>
